@@ -4,9 +4,7 @@ import telegram
 
 
 def get_send_messeg(bot, chat_id):
-    text = "Первое сообщение"
-    send_chanel = bot.send_message(chat_id=chat_id, text=text)
-    print(f'Номер отправленного сообщения: {send_chanel.message_id}')
+    bot.send_document(chat_id=chat_id, document=open('images/spacex_2.jpg', 'rb'))
 
 
 def main():
