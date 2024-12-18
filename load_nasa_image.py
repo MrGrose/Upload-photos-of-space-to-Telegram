@@ -4,7 +4,7 @@ import requests
 from get_file_info import get_expansion_file
 
 
-def get_nasa_image(base_dir: Path, token: str, quantity: int = 10) -> None:
+def get_nasa_image(base_dir: Path, token: str, quantity: int) -> None:
     param = {'count': quantity,
              "api_key": token}
     url = 'https://api.nasa.gov/planetary/apod'
