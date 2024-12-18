@@ -1,7 +1,7 @@
 from pathlib import Path
 
 import requests
-from get_file_info import get_expansion_file
+from get_file_info_nasa import get_expansion_file
 
 
 def get_nasa_image(base_dir: Path, token: str, quantity: int) -> None:
@@ -24,5 +24,4 @@ def get_nasa_image(base_dir: Path, token: str, quantity: int) -> None:
 
             with open(new_path, 'wb') as file:
                 file.write(links.content)
-        else:
-            print(f"Пропускаем не изображение: {image_url}")
+
