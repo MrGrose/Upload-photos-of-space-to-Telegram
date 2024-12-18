@@ -11,8 +11,8 @@ def get_epic_image(base_dir: Path, token: str) -> None:
     text = response.json()
 
     for number, dates in enumerate(text, 1):
-        year, month, date = dates['date'].split()[0].split('-')
-        collected_links = f'https://api.nasa.gov/EPIC/archive/natural/{year}/{month}/{date}/png/{dates['image']}.png'
+        year, month, day = dates['date'].split()[0].split('-')
+        collected_links = f'https://api.nasa.gov/EPIC/archive/natural/{year}/{month}/{day}/png/{dates['image']}.png'
         response = requests.get(collected_links, params=param)
         response.raise_for_status()
 
